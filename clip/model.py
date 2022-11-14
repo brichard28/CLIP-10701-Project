@@ -283,7 +283,7 @@ class CLIP(nn.Module):
             width=transformer_width,
             layers=transformer_layers,
             heads=transformer_heads,
-            attn_mask=roch.Tensor(np.random.rand(77,77))
+            attn_mask=torch.Tensor(np.random.rand(77,77))
             attn_mask.triu_(1) 
         )
 
