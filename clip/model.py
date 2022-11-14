@@ -284,6 +284,9 @@ class CLIP(nn.Module):
             layers=transformer_layers,
             heads=transformer_heads,
             attn_mask=self.build_attention_mask()
+            for i in range(1,77):
+                attn_mask[i] = torch.Tensor(np.random.rand(1))
+            attn_mask.triu_(1) 
         )
 
         self.vocab_size = vocab_size
